@@ -10,6 +10,8 @@ jobs:
 
       - name: Build 🔧
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+          with:
+            submodules: true
 
       - name: Setup node
         uses: actions/setup-node@v1
@@ -28,4 +30,3 @@ jobs:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
           publish_branch: master
-          keep_files: true
